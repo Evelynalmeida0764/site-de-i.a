@@ -1,0 +1,405 @@
+/*barra de navegação abaixo*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(63, 99, 63);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header{
+    background-color: rgb(2, 48, 6);
+    box-shadow: 0 1px 30px rgb(2, 41, 22);
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.logo {
+    font-size: 20px;
+    color: rgb(75, 125, 148);
+    align-items: center;
+    padding: 10px;
+    height: 65px;
+    width: 65px;
+}
+
+.navbar {
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 60px;
+}
+
+.hamburguer {
+    display: none;
+    padding: 13px;
+
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(27, 133, 101);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(133, 151, 65);
+}
+
+.nav-link:hover {
+    color: rgb(247, 212, 18);
+}
+    
+
+@media only screen and (max-width: 768px){
+    .nav-menu{
+        position: fixed;
+        left:100%;
+        top: 7.5rem;
+        flex-direction: column;
+        background-color: rgb(77, 77, 77);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px black;
+        z-index: 50;
+
+    }
+
+    .nav-link{
+        color: rgb(0, 0, 0);
+    }
+
+    .nav-link:hover {
+        color: rgb(134, 136, 16);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+    .hamburguer {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburguer.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburguer.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburguer.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+    
+/*barra de navegação acima*/
+
+/*css dos formularios abaixo*/
+:root {
+    --cor-fonte: rgb(0, 0, 0);
+    --cor-de-fundo-login:rgb(63, 99, 63);
+    --cor-box-shadow:rgb(2, 41, 22);
+    --cor-de-fundo-form: rgb(77, 77, 77);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-form-btn {
+    background-color: rgb(60, 63, 60);
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+}
+
+.voltar {
+    color: black;
+}
+.voltar:hover{
+    color: rgb(134, 136, 16);
+}
+
+.tela-login {
+    background-color: var(--cor-de-fundo-login);
+}
+
+.tela-login .container {    
+    /* height: 100vh; */
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.tela-login .container-login {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tela-login #img-tela-login {
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--cor-box-shadow);
+}
+
+.tela-login .wrap-login {
+    margin-top: 8000px;
+    float: left;
+    width: 370px;
+    height: 325px;
+    margin-top: 5%;
+    background-color: var(--cor-de-fundo-form);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--cor-box-shadow);
+    padding: 10px;
+    z-index: 3;
+    
+
+}
+
+.tela-login .form-login {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.tela-login .login-form-tittle {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    color: var(--cor-fonte);
+}
+
+.tela-login .wrap-input {
+    /* margin-top: 10%; */
+    width: 100%;    
+    position: relative;
+    border-bottom: 2px solid var(--cor-fonte);
+}
+
+.tela-login .input-form {
+
+    font-size: 18px;
+    color: var(--cor-fonte);
+    display: block;
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    padding: 0px 15px;
+    border: none;
+}
+
+.msg-erro {
+    float: right;
+    width: 270px;
+    height: 50px;
+    margin-top: 5%;
+    background-color: aqua;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--cor-box-shadow);
+    padding: 10px;
+}
+/*css dos formularios acima*/
+
+/*css do primeiro carrosel*/
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-carrosel {
+    top: 20%;
+    border-radius: 15px;
+    background-color: rgb(25, 68, 68);
+    height: 250px;
+    width: 1075px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+
+.swiper {
+    width: 950px;
+
+}
+
+.card {
+    position: relative;
+    background-color: rgb(43, 1, 1);
+    width: 200px;
+    border-radius: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgba(45, 212, 30, 0.1);
+}
+
+ 
+.card .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+} 
+
+
+/* estas classes bugam a pagina */
+.section-carrosel .card .image {
+    height: 140px;
+    width: 140px;
+    border-radius: 2px;
+    padding: 3px;
+    background-color: blueviolet;
+}
+
+/* esta classe css deixa a imagem gigante */
+.section-carrosel .card .image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/*css do primeiro carrosel*/
+
+/*css do sobre abaixo*/
+
+.autora {
+    top: 175px;
+    position: fixed;
+    left: 10%;
+    height: 20%;
+}
+
+.bibliografia {
+    top: 400px;
+    position: fixed;
+    bottom: 20%;
+    left: 10%;
+}
+
+/*css do sobre acima*/
+
+/*css do conteudo principal abaixo*/
+
+.conteudo-principal{
+    background-color: rgb(172, 11, 131);
+    position: absolute;
+    top: 52%;
+    display: flex;
+}
+
+.historia {
+    background-color: rgb(104, 204, 10);
+    width: 10px;
+    display: flex;
+}
+
+.hoje {
+    background-color: rgb(185, 119, 37);
+    width: 100px;
+    display: flex;
+}
+
+.dev {
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
+}
+
+/*css do conteudo principal acima*/
+
+/*css dos conteudos abaixo*/
+    .conteudo-historia {
+        padding: 5%;
+        margin-top: 65%;
+    }
+
+    .conteudo-hoje {
+        padding: 5%;
+        margin-top: 25%;
+    }
+
+    .conteudo-dev {
+        padding: 5%;
+        margin-top: 30%;
+    }
+/*css dos conteudos abaixo*/
+
+/*css do footer abaixo*/
+
+.link {
+    color: brown;
+}
+
+.footer {
+    background-color: rgb(25, 68, 68);
+    height: 250px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    
+}
+
+.midia-icons { 
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+    color: rgb(243, 75, 8);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    opacity: 0.3;
+}
+/*css do footer acima*/
