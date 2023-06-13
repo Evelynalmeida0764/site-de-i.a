@@ -142,14 +142,10 @@ a {
     background-color: rgb(60, 63, 60);
     border: 1px solid black;
     color: rgb(0, 0, 0);
+    padding: 5px;
+    cursor: pointer;
 }
 
-.voltar {
-    color: black;
-}
-.voltar:hover{
-    color: rgb(134, 136, 16);
-}
 
 .tela-login {
     background-color: var(--cor-de-fundo-login);
@@ -178,10 +174,9 @@ a {
 }
 
 .tela-login .wrap-login {
-    margin-top: 8000px;
     float: left;
     width: 370px;
-    height: 325px;
+    height: 350px;
     margin-top: 5%;
     background-color: var(--cor-de-fundo-form);
     border-radius: 10px;
@@ -234,6 +229,15 @@ a {
     box-shadow: 0 4px 8px var(--cor-box-shadow);
     padding: 10px;
 }
+
+.texto2 {
+    color: rgb(22, 21, 22);
+    font-style: italic;
+}
+.texto2:hover{
+    color: rgb(134, 136, 16);
+}
+
 /*css dos formularios acima*/
 
 /*css do primeiro carrosel*/
@@ -328,28 +332,39 @@ body {
 /*css do conteudo principal abaixo*/
 
 .conteudo-principal{
-    background-color: rgb(172, 11, 131);
+    background-color: rgb(63, 99, 63);
     position: absolute;
     top: 52%;
     display: flex;
+    justify-content: center;
+    
 }
 
 .historia {
-    background-color: rgb(104, 204, 10);
-    width: 10px;
+    background-color: rgb(27, 133, 101);
+    width: 30%;
     display: flex;
+    margin: 0.5%;
+    padding: 0.7%;
+    box-shadow:  0 1px 30px rgb(2, 41, 22);
 }
 
 .hoje {
-    background-color: rgb(185, 119, 37);
-    width: 100px;
+    background-color: rgb(63, 99, 63);
+    width: 30%;
     display: flex;
+    margin: 0.5%;
+    padding: 0.7%;
+    box-shadow:  0 1px 30px rgb(2, 41, 22);
 }
 
 .dev {
-    background-color: blueviolet;
-    width: 100%;
+    background-color: rgb(2, 48, 6);
+    width: 30%;
     display: flex;
+    margin: 0.5%;
+    padding: 0.7%;
+    box-shadow:  0 1px 30px rgb(2, 41, 22);
 }
 
 /*css do conteudo principal acima*/
@@ -374,7 +389,7 @@ body {
 /*css do footer abaixo*/
 
 .link {
-    color: brown;
+    color: rgb(236, 5, 5);
 }
 
 .footer {

@@ -16,17 +16,36 @@
                 <a href="sobre.html"><img src="imagens/logo2.png" class="logo" alt="Logo gerada por I.A"></a>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                        <a href="index.php" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="sobre.html" class="nav-link">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a href="cadastro.php" class="nav-link">Cadastro</a>
+                        <a href="cadastro_inteligencia.php" class="nav-link">Registrar Inteligência</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="cadastro_usuario.php" class="nav-link">Registrar Usuário</a>
+                    </li>
+                    <?php
+                        session_start();
+                        if (isset($_SESSION['usuarioLogado']))
+                        {
+                    ?>
+                    <li class="nav-item">
+                        <a href="sair.php" class="nav-link">Sair</a>
+                    </li>
+                    <?php
+                        }
+                        else
+                        {
+                    ?>
                     <li class="nav-item">
                         <a href="login.php" class="nav-link">Login</a>
                     </li>
+                    <?php
+                        }
+                    ?>
                 </ul>
                 <div class="hamburguer">
                     <span class="bar"></span>

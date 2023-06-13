@@ -1,5 +1,5 @@
 <?php
-    require_once 'usuarios.php';
+    require_once 'classe_usuario.php';
     $usu = new Usuario();
 ?>
 <!DOCTYPE html>
@@ -13,36 +13,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body class="tela-login">
-    <header class="header">
-        <nav class="navbar">
-            <img src="imagens/logo2.png" class="logo" alt="Logo gerada por I.A">
-            <ul class="nav-menu">
-                <li class="nav-item">
-                <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="sobre.html" class="nav-link">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a href="cadastro.php" class="nav-link">Cadastro</a>
-                </li>
-                <li class="nav-item">
-                    <a href="login.php" class="nav-link">Login</a>
-                </li>
-            </ul>
-            <div class="hamburguer">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+<header class="header">
+            <nav class="navbar">
+                <a href="sobre.html"><img src="imagens/logo2.png" class="logo" alt="Logo gerada por I.A"></a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                    <a href="index.php" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sobre.html" class="nav-link">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cadastro_inteligencia.php" class="nav-link">Registrar Inteligência</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cadastro_usuario.php" class="nav-link">Registrar Usuário</a>
+                    </li>
+                    <?php
+                        session_start();
+                        if (isset($_SESSION['usuarioLogado']))
+                        {
+                    ?>
+                            <li class="nav-item">
+                                <a href="sair.php" class="nav-link">Sair</a>
+                            </li>
+                    <?php
+                        }
+                        else
+                        {
+                    ?>
+                        <li class="nav-item">
+                            <a href="login.php" class="nav-link">Login</a>
+                        </li>
+                    <?php
+                        }
+                    ?>
+                </ul>
+                <div class="hamburguer">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav   >
+        </header>
     <script src="script.js"></script>
     
     <div class="container">
         <div class="container-login">
             <div class="wrap-login">
-                <form class="form-login">
+                <form class="form-login" method="POST">
                     <span class="login-from-tittle">
                         LOGIN
                     </span>
@@ -55,11 +74,12 @@
                         <span class="focus-input-form" data-placeholder="Senha"></span>
                     </div>
                     <div class="container-login-form-btn">
-                        <button class="login-form-btn">LOGAR</button>
+                        <input type="submit" value="Logar">
                     </div>
+                    <br>
                     <ul class="login-util">
                         <li class="margin-bottom">
-                            <a href="cadastro.html" class="texto2">Cadastre-se</a>
+                            <a href="cadastro_usuario.php" class="texto2">Cadastre-se</a>
                         </li>
                     </ul>
                 </form>
@@ -88,6 +108,9 @@
                     if($usu->logar($email,$senha))
                     {
                         header("location: cadastro_inteligencia.php");
+
+                        session_start();
+                        $_SESSION['usuarioLogado'] = $email;
                     }
                     else
                     {
