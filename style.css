@@ -90,8 +90,7 @@ a {
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px black;
-        z-index: 50;
-
+        /* z-index: -50; */
     }
 
     .nav-link{
@@ -147,7 +146,7 @@ a {
 }
 
 
-.tela-login {
+.tela-login { 
     background-color: var(--cor-de-fundo-login);
 }
 
@@ -158,7 +157,7 @@ a {
     margin: 0;
 }
 
-.tela-login .container-login {
+.tela-login .container-login { 
     height: 100vh;
     width: 100%;
     display: flex;
@@ -167,13 +166,13 @@ a {
     align-items: center;
 }
 
-.tela-login #img-tela-login {
+.tela-login #img-tela-login { 
     width: 500px;
     border-radius: 10px;
     box-shadow: 0 4px 8px var(--cor-box-shadow);
 }
 
-.tela-login .wrap-login {
+.tela-login .wrap-login { 
     float: left;
     width: 370px;
     height: 350px;
@@ -182,32 +181,33 @@ a {
     border-radius: 10px;
     box-shadow: 0 4px 8px var(--cor-box-shadow);
     padding: 10px;
-    z-index: 3;
-    
-
+    /* z-index: -3; */
 }
 
-.tela-login .form-login {
+.tela-login .form-login { 
     width: 100%;
     height: 100%;
     padding: 30px;
 }
 
-.tela-login .login-form-tittle {
+.tela-login .login-form-tittle { 
     display: block;
     font-size: 30px;
     text-align: center;
     color: var(--cor-fonte);
 }
 
-.tela-login .wrap-input {
-    /* margin-top: 10%; */
+.wrap-login {
+    margin-top: 10%; 
+}
+
+.tela-login .wrap-input { 
     width: 100%;    
     position: relative;
     border-bottom: 2px solid var(--cor-fonte);
 }
 
-.tela-login .input-form {
+.tela-login .input-form { 
 
     font-size: 18px;
     color: var(--cor-fonte);
@@ -240,76 +240,6 @@ a {
 
 /*css dos formularios acima*/
 
-/*css do primeiro carrosel*/
-  
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    height: 45vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section-carrosel {
-    top: 20%;
-    border-radius: 15px;
-    background-color: rgb(25, 68, 68);
-    height: 250px;
-    width: 1075px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    
-}
-
-.swiper {
-    width: 950px;
-
-}
-
-.card {
-    position: relative;
-    background-color: rgb(43, 1, 1);
-    width: 200px;
-    border-radius: 15px;
-    margin: 20px 0;
-    padding: 15px;
-    box-shadow: 0 5px 10px rgba(45, 212, 30, 0.1);
-}
-
- 
-.card .card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    position: relative;
-} 
-
-
-/* estas classes bugam a pagina */
-.section-carrosel .card .image {
-    height: 140px;
-    width: 140px;
-    border-radius: 2px;
-    padding: 3px;
-    background-color: blueviolet;
-}
-
-/* esta classe css deixa a imagem gigante */
-.section-carrosel .card .image img {
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-/*css do primeiro carrosel*/
 
 /*css do sobre abaixo*/
 
@@ -372,7 +302,7 @@ body {
 /*css dos conteudos abaixo*/
     .conteudo-historia {
         padding: 5%;
-        margin-top: 65%;
+        
     }
 
     .conteudo-hoje {
@@ -418,3 +348,9 @@ body {
     opacity: 0.3;
 }
 /*css do footer acima*/
+
+iframe {
+    width: 100%;
+    justify-content: center;
+    height: 500px;
+}

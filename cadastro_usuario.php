@@ -5,61 +5,14 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    </head>
+    <?php
+        require_once "head.php"
+    ?>
     <!--começo barra de navegação-->
     <body class="tela-login">
-        <header class="header">
-            <nav class="navbar">
-                <a href="sobre.html"><img src="imagens/logo2.png" class="logo" alt="Logo gerada por I.A"></a>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.php" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="sobre.html" class="nav-link">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="cadastro_inteligencia.php" class="nav-link">Registrar Inteligência</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="cadastro_usuario.php" class="nav-link">Registrar Usuário</a>
-                    </li>
-                    <?php
-                        session_start();
-                        if (isset($_SESSION['usuarioLogado']))
-                        {
-                    ?>
-                    <li class="nav-item">
-                        <a href="sair.php" class="nav-link">Sair</a>
-                    </li>
-                    <?php
-                        }
-                        else
-                        {
-                    ?>
-                    <li class="nav-item">
-                        <a href="login.php" class="nav-link">Login</a>
-                    </li>
-                    <?php
-                        }
-                    ?>
-                </ul>
-                <div class="hamburguer">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </header>
-        <script src="script.js"></script>
-        <!--fim barra de navegação-->
+        <?php
+            require_once "header.php"
+        ?>
         <div class="container">
             <div class="container-login">
                 <div class="wrap-login">

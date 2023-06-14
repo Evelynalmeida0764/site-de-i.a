@@ -1,158 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <?php
+        require_once 'head.php';
+    ?>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>       
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     </head>
     <!--começo barra de navegação-->
-    </body>
-        <header class="header">
-            <nav class="navbar">
-                <a href="sobre.html"><img src="imagens/logo2.png" class="logo" alt="Logo gerada por I.A"></a>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                    <a href="index.php" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="sobre.html" class="nav-link">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="cadastro_inteligencia.php" class="nav-link">Registrar Inteligência</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="cadastro_usuario.php" class="nav-link">Registrar Usuário</a>
-                    </li>
-                    <?php
-                        session_start();
-                        if (isset($_SESSION['usuarioLogado']))
-                        {
-                    ?>
-                            <li class="nav-item">
-                                <a href="sair.php" class="nav-link">Sair</a>
-                            </li>
-                    <?php
-                        }
-                        else
-                        {
-                    ?>
-                        <li class="nav-item">
-                            <a href="login.php" class="nav-link">Login</a>
-                        </li>
-                    <?php
-                        }
-                    ?>
-                </ul>
-                <div class="hamburguer">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav   >
-        </header>
-        <script src="script.js"></script> 
-
-        <section class="section-carrosel">
-            <div class="swiper mySwiper container">
-                <div class="swiper-wrapper content">
-                    <!-- aqui vai oq precesa ser replicado-->
-                    <div class="swiper-slide card">
-                        <div class="card-content">
-                            <div class="image">
-                                <img src="imagens/ia1.png" alt="carregando..">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- aqui vai oq precesa ser replicado-->
-                    <div class="swiper-slide card">
-                        <div class="card-content">
-                            <div class="image">
-                                <img src="imagens/ia2.png" alt="carregando..">
-                            </div>
-                        </div>    
-                    </div>
-                    <div class="swiper-slide card">
-                        <div class="card-content">
-                            <div class="image">
-                                <img src="imagens/ia3.png" alt="carregando..">
-                            </div>
-                        </div>    
-                    </div>
-                    <div class="swiper-slide card">
-                        <div class="card-content">
-                            <div class="image">
-                                <img src="imagens/ia4.png" alt="carregando..">
-                            </div>
-                        </div>    
-                    </div>
-                    <div class="swiper-slide card">
-                        <div class="card-content">
-                            <div class="image">
-                                <img src="imagens/ia5.png" alt="carregando..">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide card">
-                        <div class="card-content">
-                            <div class="image">
-                                <img src="imagens/ia6.png" alt="carregando..">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide card">
-                        <div class="card-content">
-                            <div class="image">
-                                <img src="imagens/ia7.png" alt="carregando..">
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="swiper-slide card">
-                        <div class="card-content">
-                            <div class="image">
-                                <img src="imagens/ia8.png" alt="carregando..">
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="swiper-slide card">
-                        <div class="card-content">
-                            <div class="image">
-                                <img src="imagens/ia9.png" alt="carregando..">
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-        </section>            
-
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                slidesPerGroup: 3,
-                loop: true,
-                loopFillGroupWithBlank: true,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-        </script>
+    <body>
+        <?php
+            require_once 'header.php';
+        ?>
+        <iframe src="carrosel1/carrosel-img.html" frameborder="0"></iframe>
 
         <main class="conteudo-principal">
             <span class="historia">
                     <div>
-                        <a href="historia.html">historia da Inteligencia Artificial</a>
+                        <a href="historia.php">historia da Inteligencia Artificial</a>
                         <br>
                         <br>
                         <p>Um pesseio pela historia de uma tecnologia tão presente nas nossas vidas no dia de hoje</p>
@@ -160,7 +24,7 @@
             </span>
             <span class="hoje">
                     <div>
-                        <a href="hoje.html">Inteligencia Artificial nos dias de hoje</a>
+                        <a href="hoje.php">Inteligencia Artificial nos dias de hoje</a>
                         <br>
                         <br>
                         <p>Um vislumbre dessa tecnologia atualmente</p>
@@ -168,7 +32,7 @@
             </span>
             <span class="dev">
                 <div>
-                    <a href="dev.html">Inteligencia Artificial para os desenvolvedores</a>
+                    <a href="dev.php">Inteligencia Artificial para os desenvolvedores</a>
                     <br>
                     <br>
                     <p>Uma demostração do que essa tecnologia pode fazer para aqueles que estão ativamente envolvidos</p>
@@ -176,13 +40,10 @@
             </span>
         </main>
 
-        <footer class="footer">
-            <p>Todos os direitos reservados.</p>
-            <div class="midia-icons">
-                <a href="https://github.com/Evelynalmeida0764" class="link"><i class="fa-brands fa-github"></i></a>
-                <a href="https://twitter.com/loveyoudoguin" class="link"><i class="fa-brands fa-twitter"></i></a>
-                <a href="" class="link"><i class="fa-brands fa-discord" class="link"></i></a>
-            </div>
-        </footer>
-    </body>
+        <iframe src="carrossel2/carrossel.php" frameborder="0"></iframe>
+        <?php
+            require_once 'footer.php';
+        ?>
+
+</body>
 </html>

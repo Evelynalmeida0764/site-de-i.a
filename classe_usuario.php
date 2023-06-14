@@ -1,14 +1,14 @@
 <?php
 
     Class Usuario{
-        private $pdo;
+        private $conn;
         public $msgErro="";
 
         public function conectar($nome, $host, $usuario, $senha)
         {
-            global $pdo;
+            global $conn;
             try{
-                $pdo = new PDO("mysql:dbname=".$nome,$usuario,$senha);
+                $conn = new PDO("mysql:dbname=".$nome,$usuario,$senha);
             }
             catch (PDOException $e){
                 $msgErro = $e->getMessage();
@@ -17,9 +17,9 @@
 
         public function cadastrar($nome, $telefone, $email, $senha)
         {
-            global $pdo;
+            global $conn;
             //Verificar se o email já está cadastrado
-            $sql = $pdo->prepare("SELECT id FROM usuarios WHERE email = :e");
+            $sql = $conn->prepare("SELECT id FROM usuarios WHERE email = :e");
             $sql->bindValue(":e", $email);
             $sql->execute();
 
@@ -30,7 +30,7 @@
             }
             else
             {
-                $sql = $pdo->prepare("INSERT INTO usuarios (nome, telefone, email, senha)
+                $sql = $conn->prepare("INSERT INTO usuarios (nome, telefone, email, senha)
                 VALUES (:n, :t, :e, :s)");
                 $sql->bindValue(":n", $nome);
                 $sql->bindValue(":t", $telefone);
@@ -43,8 +43,8 @@
 
         public function logar($email, $senha){
 
-            global $pdo;
-            $sql = $pdo->prepare("SELECT id FROM usuarios WHERE email = :e AND senha = :s");
+            global $conn;
+            $sql = $conn->prepare("SELECT id FROM usuarios WHERE email = :e AND senha = :s");
             $sql->bindValue(":e", $email);
             $sql->bindValue(":s", md5($senha));
             $sql->execute();
